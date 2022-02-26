@@ -3,3 +3,13 @@
 ################################################################################
 
 /.vs
+/Pokemon-Shakespear.API/bin/Debug/netcoreapp3.1
+/Pokemon-Shakespear.API/obj
+/Pokemon-Shakespear.API.Tests/bin/Debug/netcoreapp3.1
+/Pokemon-Shakespear.API.Tests/obj
+/Pokemon-Shakespear.Business/bin/Debug/netcoreapp3.1
+/Pokemon-Shakespear.Business/obj
+/Pokemon-Shakespear.Business.Tests/bin/Debug/netcoreapp3.1
+/Pokemon-Shakespear.Business.Tests/obj
+/Pokemon-Shakespear.Models/bin/Debug/netcoreapp3.1
+/Pokemon-Shakespear.Models/obj
