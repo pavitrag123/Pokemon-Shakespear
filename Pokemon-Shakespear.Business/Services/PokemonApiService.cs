@@ -17,20 +17,11 @@ namespace Pokemon_Shakespear.Business.Services
     public class PokemonApiService : IPokemonApiService
     {
         private readonly IPokemonApiClientWrapper _pokemonApiClientWrapper;
-        private readonly IMemoryCache _memoryCache;
-        private readonly MemoryCacheEntryOptions memoryCacheEntryOptions;
 
-        public PokemonApiService(IPokemonApiClientWrapper pokemonApiClientWrapper
-            , IMemoryCache memoryCache, IConfiguration configuration)
+        public PokemonApiService(IPokemonApiClientWrapper pokemonApiClientWrapper)
         {
             _pokemonApiClientWrapper = pokemonApiClientWrapper ?? throw new ArgumentNullException(nameof(pokemonApiClientWrapper));
-            _memoryCache = memoryCache;
-            memoryCacheEntryOptions = new MemoryCacheEntryOptions()
-            {
-                AbsoluteExpiration = DateTime.Now.AddHours(Convert.ToInt16(configuration["AbsoluteExpirationInHrs"])),
-                Priority = CacheItemPriority.Normal,
-                SlidingExpiration = TimeSpan.FromMinutes(Convert.ToInt16(configuration["SlidingExpirationInMinutes"]))
-            };
+          
         }
 
         public async Task<Models.Domain.Pokemon> GetByName(string pokemonName)
@@ -39,13 +30,7 @@ namespace Pokemon_Shakespear.Business.Services
             {
                 throw new ArgumentNullException("Value cannot be null or empty.", nameof(pokemonName));
             }
-
-            string cacheKey = pokemonName.ToLower();
-            if (!_memoryCache.TryGetValue(cacheKey, out PokemonSpecies pokemon))
-            {
-                pokemon = await _pokemonApiClientWrapper.GetResourceAsync(cacheKey);
-                _memoryCache.Set(cacheKey, pokemon, memoryCacheEntryOptions);
-            }
+            PokemonSpecies pokemon = await _pokemonApiClientWrapper.GetResourceAsync(pokemonName);            
 
             return pokemon is null ? default : GetPokemonDetails(pokemon);
         }
@@ -56,7 +41,7 @@ namespace Pokemon_Shakespear.Business.Services
         {
             var parsedDescription = GetDescription(pokemonSpecies);
 
-            return new Models.Domain.Pokemon(pokemonSpecies.Name, parsedDescription);
+            return new Models.Domain.Pokemon(pokemonSpecies.Name, parsedDescription, pokemonSpecies.Id);
         }
 
         private static string GetDescription(PokemonSpecies pokemonSpecies)

@@ -16,7 +16,6 @@ namespace Pokemon_Shakespear.Business.Wrappers
             try
             {
                 using var client = new PokeApiClient();
-
                 return await client.GetResourceAsync<PokemonSpecies>(pokemonName);
             }
             catch (HttpRequestException)

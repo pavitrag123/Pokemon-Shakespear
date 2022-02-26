@@ -15,9 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3DDA8305
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemon-Shakespear.API.Tests", "Pokemon-Shakespear.API.Tests\Pokemon-Shakespear.API.Tests.csproj", "{AB27EB0D-9389-4A2F-852B-CCBA9EBFAE21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemon-Shakespear.Business.Tests", "Pokemon-Shakespear.Business.Tests\Pokemon-Shakespear.Business.Tests.csproj", "{3FB1F0B8-7A39-4E93-9576-6E9E7A2FF07D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemon-Shakespear.Business.Tests", "Pokemon-Shakespear.Business.Tests\Pokemon-Shakespear.Business.Tests.csproj", "{3FB1F0B8-7A39-4E93-9576-6E9E7A2FF07D}"
 EndProject
-
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Pokemon-Shakespear.UI", "Pokemon-Shakespear.UI\Pokemon-Shakespear.UI.esproj", "{DD50908D-239D-47DB-950D-1F43E891DE75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,12 +45,12 @@ Global
 		{3FB1F0B8-7A39-4E93-9576-6E9E7A2FF07D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FB1F0B8-7A39-4E93-9576-6E9E7A2FF07D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FB1F0B8-7A39-4E93-9576-6E9E7A2FF07D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70E68CA4-E0B7-4F67-BD1D-C1BE8FCC90EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70E68CA4-E0B7-4F67-BD1D-C1BE8FCC90EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70E68CA4-E0B7-4F67-BD1D-C1BE8FCC90EB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{70E68CA4-E0B7-4F67-BD1D-C1BE8FCC90EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70E68CA4-E0B7-4F67-BD1D-C1BE8FCC90EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70E68CA4-E0B7-4F67-BD1D-C1BE8FCC90EB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DD50908D-239D-47DB-950D-1F43E891DE75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD50908D-239D-47DB-950D-1F43E891DE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD50908D-239D-47DB-950D-1F43E891DE75}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DD50908D-239D-47DB-950D-1F43E891DE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD50908D-239D-47DB-950D-1F43E891DE75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD50908D-239D-47DB-950D-1F43E891DE75}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

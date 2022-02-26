@@ -6,6 +6,7 @@ namespace Pokemon_Shakespear.Models.Domain
 {
     public class Pokemon
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
@@ -14,10 +15,11 @@ namespace Pokemon_Shakespear.Models.Domain
 
         }
 
-        public Pokemon(string name, string description)
+        public Pokemon(string name, string description,int id)
         {
             Name = name;
             Description = description;
+            Id = id;
         }
     }
 }
