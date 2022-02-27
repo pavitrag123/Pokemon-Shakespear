@@ -17,6 +17,7 @@ Swagger Url: http://localhost:2531/swagger/index.html
 ## Setup
 1. On Solution in Visual studio and run Pokemon-Shakespear.API project
 2. If UI project is running at a port different than '3001', update the port in 'AllowedOrigins' appsettings
+3. Solution caches pokemon search results to handle sharkespeare API rate limiting of 5 calls per hr
 
 UI:
 
