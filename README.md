@@ -11,6 +11,7 @@ Technology: react v17.0
 
 # Pokemon-Shakespear.API
 Technology: .NetCore3.1
+
 Swagger Url: http://localhost:2531/swagger/index.html
 
 ## Setup
