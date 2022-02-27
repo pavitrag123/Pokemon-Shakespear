@@ -52,7 +52,7 @@ namespace Pokemon_Shakespear.Business.Tests.Services
         }
 
         [Test]
-        public async Task GivenValidPokemonName_ReturnDetailsFromAPIClient()
+        public async Task GivenValidText_ReturnTranslatedText()
         {
             var actualResult = await _shakespeareApiService.GetTranslation("Charizard flies around the sky in search of powerful opponents.\nIt breathes fire of such great heat that it melts anything.\nHowever, it never turns its fiery breath on any opponent\nweaker than itself.");
             var expectedResult = SetupData.GetData<PokemonViewModel>("../../../Inputs/PokemonViewModel.json");

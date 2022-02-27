@@ -1,8 +1,6 @@
-import styled from 'styled-components'
-// import { ThumbUp, ThumbDown } from '@styled-icons/heroicons-solid'
-// import SecondaryButton from '../secondary-button'
+import styled from 'styled-components';
 
-const StyledCard = styled.div`
+const StyledPokemonCard = styled.div`
   display: flex;
   background-color: white;
   width: 50%;
@@ -25,12 +23,12 @@ export default function PokemonDataCard({
   description: string
 }) {
   return (
-    <StyledCard>
+    <StyledPokemonCard>
       <div>
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
           height={80}
-          style={{ marginRight: 10 }}
+          style={{ marginRight: 10,minWidth:80 }}
         />
       </div>
       <div style={{ width: '100%' }}>
@@ -39,6 +37,6 @@ export default function PokemonDataCard({
         </div>
         <div style={{ color: 'darkgrey', marginBottom: 20 }}>{description}</div>
       </div>
-    </StyledCard>
+    </StyledPokemonCard>
   )
 }

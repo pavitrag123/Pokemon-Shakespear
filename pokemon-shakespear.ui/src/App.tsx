@@ -5,17 +5,20 @@ import SearchBar from '../src/components/search-bar';
 import PokemonDataCard from '../src/components/pokemon-data-card';
 import loadingSymbol from '../src/images/loading.gif';
 
-function App() {  
+function App() {
   const baseURL = "http://localhost:2531";
   const [searchText, setSearchText] = useState<string>('')
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(true);
   const [pokemon, setPokemon] = useState();
+  const [errorCode, setErrorCode] = useState<number>();
 
   async function translatePokemon() {
     try {
       setIsLoaded(false);
       const res = await fetch(`${baseURL}/pokemon/${searchText.toLowerCase()}`);
+      setErrorCode(res.status);
+
       if (!res.ok) {
         const message = `An error has occured: ${res.status} - ${res.statusText}`;
         throw new Error(message);
@@ -34,7 +37,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h3>Pokemon's Shakespear</h3>        
+        <h3>Pokemon's Shakespear</h3>
       </header>
       <SearchBar onChange={(e) => setSearchText(e.target.value)}
         placeholder={'Type pokemonname and press enter'}
@@ -42,8 +45,8 @@ function App() {
           if (key === 'Enter') {
             translatePokemon()
           }
-        }}
-      ></SearchBar>
+        }}></SearchBar>
+
       {isLoaded == false && (
         <div className="loadingSymbol" >
           <img src={loadingSymbol} />
@@ -62,7 +65,8 @@ function App() {
             />
           ) : (
             <div style={{ textAlign: 'center', color: 'lightgrey' }}>
-              No Pokemon Found
+              {errorCode == 404 && (<p>No Pokemon Found</p>)}
+              {errorCode == 500 && (<p>Sorry something went wrong!! Please try again later</p>)}
             </div>
           )}
         </div>

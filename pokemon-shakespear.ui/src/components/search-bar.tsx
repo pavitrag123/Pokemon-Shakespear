@@ -17,6 +17,7 @@ const StyledSearchBar = styled.input<{ error?: boolean }>`
   box-sizing: border-box;
   box-shadow: 0px 5px 15px rgb(59 59 59 / 5%);
   margin:auto;
+  cursor:text;
 
   &:hover {
     border: 1px solid lightgrey;
