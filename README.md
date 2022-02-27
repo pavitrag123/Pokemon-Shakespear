@@ -17,3 +17,7 @@ Swagger Url: http://localhost:2531/swagger/index.html
 ## Setup
 1. On Solution in Visual studio and run Pokemon-Shakespear.API project
 2. If UI project is running at a port different than '3001', update the port in 'AllowedOrigins' appsettings
+
+UI:
+
+![image](https://user-images.githubusercontent.com/19691194/155884513-828a8693-0699-41d1-be67-e7a3f6ad4f1a.png)
